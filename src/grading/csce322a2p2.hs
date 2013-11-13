@@ -2,6 +2,7 @@ import Prelude
 import System.Environment ( getArgs )
 import Data.List
 import Data.Maybe
+import Pacman.Replace
 
 -- The main method that will be used for testing / command line access
 main = do
