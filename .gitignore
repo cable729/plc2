@@ -1,2 +1,4 @@
 # Sublime
 *.sublime-workspace
+
+dist/
