@@ -8,7 +8,6 @@ homepage:            github.com/cable729/plc2
 license:             GPL-3
 license-file:        LICENSE
 author:              Caleb Jares
-maintainer:          cable729+plc2@gmail.com
 -- copyright:           
 category:            School Project
 build-type:          Simple
