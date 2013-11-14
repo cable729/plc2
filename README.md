@@ -4,6 +4,21 @@ Project 2 for Programming Language Concepts (CSCE322 at UNL)
 
 As you can see from the language statistics bar, Haskell is green as in good to go.
 
+#Installation Instructions
+1. Download Haskell: [Windows](http://www.haskell.org/platform/windows) | [Mac](http://www.haskell.org/platform/mac)
+2. Configure with your favorite IDE. Instructions for Sublime Text follow.
+
+#Sublime-Text
+1. Install the `SublimeHaskell` package
+2. Run the following command:
+
+    ```Batchfile
+    cabal update && cabal install aeson haskell-src-exts haddock test-framework test-framework-hunit
+    cabal configure --enable-tests
+    ```
+
+3. Restart Sublime Text, you should be good to go. If Sublime isn't starting, go to taskmanager and close it then run the previous command.
+
 #Conventions
 - [Haskell official language guideline](shttp://www.haskell.org/haskellwiki/Programming_guidelines)
 - [Haskell official project setup guidelines](http://www.haskell.org/haskellwiki/How_to_write_a_Haskell_program)
