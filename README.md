@@ -6,7 +6,7 @@ As you can see from the language statistics bar, Haskell is green as in good to 
 2. Configure with your favorite IDE. Instructions for Sublime Text follow.
 
 ###Sublime-Text
-1. Install the `SublimeHaskell` package
+1. Install the `SublimeHaskell` package (With Package Manager installed: ctrl+shift+p, "install package", "SublimeHaskell").
 2. Run the following command:
 
     ```Batchfile
