@@ -1,12 +1,15 @@
-module Main
-    ( main
-    ) where
-
-import           Test.Framework        (defaultMain)
-
-import qualified Pacman.MakeMove.Tests
-
-main :: IO ()
-main = defaultMain
-    [ Pacman.MakeMove.Tests.tests
-    ]
+module Main
+    ( main
+    ) where
+
+import Test.Framework (defaultMain)
+import qualified Pacman.UtilsTests
+import qualified Pacman.MakeMoveTests
+
+
+main :: IO ()
+
+main = defaultMain
+    [ Pacman.MakeMoveTests.tests,
+    Pacman.UtilsTests.tests
+    ]

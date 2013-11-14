@@ -26,7 +26,6 @@ library
 
 test-suite tests
   hs-source-dirs: src testsuite/tests
-  other-modules: Pacman.MakeMove.Tests
   main-is:      TestSuite.hs
   type:       exitcode-stdio-1.0
   build-depends: base, test-framework, HUnit, test-framework-hunit
