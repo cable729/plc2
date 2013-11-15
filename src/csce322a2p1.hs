@@ -2,24 +2,24 @@ import Prelude
 import System.Environment ( getArgs )
 import Data.List
 import Data.Maybe
-import Pacman.Replace
+import Part1
 
 -- The main method that will be used for testing / command line access
 main = do
 	args <- getArgs
 	pacFile <- readFile (head args)
-	map <- mapList pacFile
+	map <- mapTuple pacFile
 	let
 		pac = map
 		in yourMain pac
 
-partTwoOutput :: [[Char]] -> IO ()
-partTwoOutput pac = do
+partOneOutput :: (Int, Int, Int, [[Char]]) -> IO ()
+partOneOutput pac = do
 	print pac
 
 -- Converts a string to a tuple representing the pac-man map
-mapList :: String -> IO [[Char]]
-mapList = readIO
+mapTuple :: String -> IO (Int, Int, Int, [[Char]], Char)
+mapTuple = readIO
 
 
 
@@ -28,6 +28,4 @@ mapList = readIO
 
 -- yourMain
 yourMain pac =
-	partTwoOutput $ replace pac
-
---replace :: [[Char]] -> [[Char]]
+	partOneOutput $ trymove pac

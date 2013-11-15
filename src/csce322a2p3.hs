@@ -2,7 +2,6 @@ import Prelude
 import System.Environment ( getArgs )
 import Data.List
 import Data.Maybe
-import Pacman.Restart
 
 -- The main method that will be used for testing / command line access
 main = do

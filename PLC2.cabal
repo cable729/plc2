@@ -15,17 +15,11 @@ cabal-version:       >=1.8
 
 library
   hs-source-dirs: src
-  exposed-modules:
-    -- should it just be Pacman?
-    Pacman.MakeMove
-    Pacman.MoveAll
-    Pacman.Replace
-    Pacman.Restart
-    Pacman.TryMove
+  exposed-modules: Part1
   build-depends:       base ==4.6.*
 
 test-suite tests
-  hs-source-dirs: src testsuite/tests
-  main-is:      TestSuite.hs
+  hs-source-dirs: src tests
+  main-is:      tests.hs
   type:       exitcode-stdio-1.0
-  build-depends: base, test-framework, HUnit, test-framework-hunit
+  build-depends: base, tasty, tasty-golden
