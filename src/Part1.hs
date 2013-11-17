@@ -19,6 +19,11 @@ trymove (level, score, lives, themap, move) =
 	let pacmanLoc = pacmanlocation themap
 	    nextLoc = nextlocation pacmanLoc move
 	    nextType = themap !! fst nextLoc !! snd nextLoc
+	    foodMap = setMultiIndex (setMultiIndex themap nextLoc 'M') pacmanLoc '_'
     in case nextType of
     	'B' -> (level, score, lives, themap) -- doesn't move pacman if he tries to go into the border
+    	'W' -> (level, score, lives, themap) -- doesn't move pacman if he tries to go into the border
     	'G' -> (level, score, lives - 1, themap) -- reduces the life and doesn't move pacman if he runs into a ghost
+    	'F' -> (level, score + 1, lives, foodMap)
+    	'P' -> (level, score + 10, lives, foodMap)
+    	'_' -> (level, score, lives, foodMap)

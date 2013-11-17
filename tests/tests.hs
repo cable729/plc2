@@ -1,5 +1,8 @@
 module Main
-    ( main
+    (
+    	main,
+    	Part1Input(..),
+    	runPart1
     ) where
 
 import Test.Tasty
@@ -16,5 +19,9 @@ tests = testGroup "Empty" []
 
 --part1 = test "Part 1" "..\data\output1_1.txt"
 
---part1Input :: String ()
---part1Input fileName = trymove 
+type Part1Input = (Int, Int, Int, [[Char]], Char)
+runPart1 :: FilePath -> String
+runPart1 file = let input =	do
+	contents <- readFile file;
+	return read contents;
+	in trymove input

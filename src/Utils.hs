@@ -1,6 +1,8 @@
 module Utils (
 	pacmanlocation,
-	nextlocation
+	nextlocation,
+	setIndex,
+	setMultiIndex
 	) where
 
 import Prelude
@@ -14,8 +16,16 @@ pacmanlocation xs = (row, fromJust $ elemIndex 'M' (xs!!row))
 
 nextlocation :: (Int, Int) -> Char -> (Int, Int)
 nextlocation tuple dir
-	| dir == 'L' = (x-1,y)
-	| dir == 'R' = (x+1,y)
-	| dir == 'U' = (x,y-1)
-	| dir == 'D' = (x,y+1)
+	| dir == 'L' = (x,y-1)
+	| dir == 'R' = (x,y+1)
+	| dir == 'U' = (x-1,y)
+	| dir == 'D' = (x+1,y)
 	where (x,y) = tuple
+
+setIndex :: [a] -> Int -> a -> [a]
+setIndex (_:xs) 0 val = val:xs
+setIndex (x:xs) index val = x:(setIndex xs (index-1) val)
+
+setMultiIndex :: [[a]] -> (Int, Int) -> a -> [[a]]
+setMultiIndex xs (x, y) val = setIndex xs x row
+	where row = setIndex (xs !! x) y val
