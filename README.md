@@ -1,3 +1,6 @@
+## Note
+This project is incomplete. I could never get unit testing to work. I may start a new project in Haskell now that I've learned the basics. For that project I would explore architecture and module design which I was unable to do in this assignment (just implementation of functions which were arguably not designed the greatest).
+
 Project 2 for Programming Language Concepts (CSCE322 at UNL)
 As you can see from the language statistics bar, Haskell is green as in good to go.
 
