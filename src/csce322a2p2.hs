@@ -2,6 +2,7 @@ import Prelude
 import System.Environment ( getArgs )
 import Data.List
 import Data.Maybe
+import Functions(replace)
 
 -- The main method that will be used for testing / command line access
 main = do
@@ -28,5 +29,3 @@ mapList = readIO
 -- yourMain
 yourMain pac =
 	partTwoOutput $ replace pac
-
---replace :: [[Char]] -> [[Char]]

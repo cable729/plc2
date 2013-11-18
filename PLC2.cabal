@@ -15,11 +15,11 @@ cabal-version:       >=1.8
 
 library
   hs-source-dirs: src
-  exposed-modules: Part1
-  build-depends:       base ==4.6.*
+  exposed-modules: Utils, Functions
+  build-depends:       base ==4.6.*, MissingH >=1.2
 
-test-suite tests
-  hs-source-dirs: src tests
-  main-is:      tests.hs
-  type:       exitcode-stdio-1.0
-  build-depends: base, tasty, tasty-golden
+--test-suite tests
+--  hs-source-dirs: src tests
+--  main-is:      tests.hs
+--  type:       exitcode-stdio-1.0
+--  build-depends: base, tasty, tasty-golden

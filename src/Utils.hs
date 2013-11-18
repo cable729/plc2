@@ -2,7 +2,8 @@ module Utils (
 	pacmanlocation,
 	nextlocation,
 	setIndex,
-	setMultiIndex
+	setMultiIndex,
+	countInMultiArray
 	) where
 
 import Prelude
@@ -25,7 +26,16 @@ nextlocation tuple dir
 setIndex :: [a] -> Int -> a -> [a]
 setIndex (_:xs) 0 val = val:xs
 setIndex (x:xs) index val = x:(setIndex xs (index-1) val)
+setIndex _ _ _ = []
 
+-- Replace row, column in [[a]] with a
 setMultiIndex :: [[a]] -> (Int, Int) -> a -> [[a]]
 setMultiIndex xs (x, y) val = setIndex xs x row
 	where row = setIndex (xs !! x) y val
+
+countInMultiArray :: [[Char]] -> Char -> Int
+countInMultiArray [] _ = 0
+countInMultiArray (x:xs) a = foldr (\ c s -> if c == a then s+1 else s) 0 x + (countInMultiArray xs a)
+
+--ghostOptimalMove :: (Int, Int) -> (Int, Int) -> (Int, Int)
+--ghostOptimalMove p g 
